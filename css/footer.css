@@ -1,0 +1,102 @@
+footer {
+    background-color: #111;
+    color: white;
+    padding: 3rem 5rem;
+    margin-top: 4rem;
+}
+
+.footer_content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+    align-items: center;
+}
+
+.footer_logo_text {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footer_logo_text i {
+    color: #8a2be2;
+    font-size: 1.5rem;
+}
+
+.footer_logo_text p {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.footer_links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer_links a {
+    color: rgb(150, 150, 150);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+}
+
+.footer_links a:hover {
+    color: #8a2be2;
+}
+
+.footer_socials {
+    display: flex;
+    gap: 1.2rem;
+    font-size: 1.2rem;
+}
+
+.footer_socials a {
+    color: white;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.footer_socials a:hover {
+    color: #8a2be2;
+    transform: translateY(-2px);
+}
+
+.footer_divider {
+    border: 0;
+    border-top: 1px solid #222;
+    margin: 2rem 0;
+}
+
+.footer_copy {
+    text-align: center;
+    font-size: 0.8rem;
+    color: rgb(120, 120, 120);
+    margin: 0;
+}
+
+/* ==========================================
+MEDIA QUERY PARA EL FOOTER (Mobile)
+========================================== */
+@media (max-width: 768px) {
+    footer {
+        padding: 3rem 1.5rem; /* Ajustamos padding para que no se pegue a los bordes */
+    }
+
+    .footer_content {
+        flex-direction: column; /* Apilamos los 3 bloques: Logo, Links, Redes */
+        justify-content: center;
+        text-align: center;
+        gap: 2.5rem; /* Le damos un toque más de aire entre bloques */
+    }
+
+    .footer_links {
+        flex-direction: column; /* Ponemos los links en vertical para que se puedan tocar fácil con el dedo */
+        gap: 1.2rem;
+    }
+
+    .footer_socials {
+        justify-content: center; /* Aseguramos que los iconos queden bien centrados */
+        width: 100%;
+    }
+}

@@ -1,0 +1,163 @@
+header {
+    display: flex;
+    flex-direction: row;
+    background: #210e2e;
+    color: #eee;
+    background-image: radial-gradient(rgba(176, 125, 255, 0.15) 1.5px, transparent 1.5px);
+    background-size: 24px 24px;
+    padding: 5rem 5rem;
+    text-align: center;
+    position: relative;
+}
+
+header span {
+    color: #f1e4ff;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    
+    /* El truco del efecto Neón */
+    text-shadow: 
+        0 0 5px #fff,                /* Brillo blanco interno */
+        0 0 10px #d3b3ff,            /* Brillo morado claro cercano */
+        0 0 20px #b07dff,            /* Resplandor intermedio */
+        0 0 40px #8a2be2,            /* Resplandor exterior profundo */
+        0 0 80px #8a2be2;            /* Gran halo de luz de fondo */
+    animation: parpadeo 3s infinite alternate;
+}
+
+header h1 {
+    font-size: 2.5rem;
+}
+
+header .logo {
+    font-size: 3rem;
+    color: #8a2be2;
+}
+
+@keyframes parpadeo {
+    0%, 100% { opacity: 1; }
+    70% { opacity: 1; }
+    72% {
+        opacity: 0.85;
+        text-shadow: 0 0 10px #d3b3ff, 0 0 20px #b07dff;
+    }
+    73% { opacity: 1; }
+    95% { opacity: 1; }
+    96% { opacity: 0.9; }
+    97% { opacity: 1; }
+}
+
+.h_part1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    width: 50%;
+}
+
+.stats_header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.stat_header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.stat_header i {
+    font-size: 1.5rem;
+    background: #8a2be2;
+    color: #eee;
+    padding: 0.5rem;
+    width: 3rem;
+    border-radius: 8px;
+}
+
+.stat_header i:hover {
+    background: #eee;
+    color: #8a2be2;
+}
+
+.h_part2 {
+    width: 50%;
+    position: relative;
+    min-height: 25rem; /* Le da altura al contenedor para que las imágenes absolutas no floten en el aire */
+}
+
+/* Usamos porcentajes o ems para que escale un poco mejor en pantallas medianas */
+.h_part2 img:nth-child(1) {
+    border: 2px solid #8a2be2;
+    border-radius: 24px;
+    position: absolute;
+    width: 16rem;
+    left: 15%;
+    top: 10%;
+    z-index: 1;
+}
+
+.h_part2 img:nth-child(2) {
+    border: 2px solid #8a2be2;
+    border-radius: 24px;
+    position: absolute;
+    width: 16rem;
+    left: 45%;
+    top: 30%;
+    z-index: 2;
+}
+
+/* ==========================================
+MEDIA QUERY PARA RESPONSIVE 
+========================================== */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; 
+        padding: 3rem 1.5rem;   
+        gap: 3rem;
+        overflow: hidden; 
+    }
+
+    .h_part1, .h_part2 {
+        width: 100%;           
+    }
+
+    header h1 {
+        font-size: 2rem;      
+    }
+
+    header .logo {
+        font-size: 2.5rem;
+    }
+
+    .stats_header {
+        flex-wrap: wrap;      
+        gap: 1.5rem;
+    }
+
+    .h_part2 {
+        min-height: 20rem;   
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .h_part2 img:nth-child(1) {
+        width: 12rem;          
+        left: 15%;
+        top: 0;
+    }
+
+    .h_part2 img:nth-child(2) {
+        width: 12rem;
+        left: auto;
+        right: 15%;
+        top: 4rem;
+    }
+}

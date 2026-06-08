@@ -1,0 +1,47 @@
+nav {
+    display: flex;
+    flex-direction: row;
+    background: #210e2e;
+    color: #eee;
+    background-image: radial-gradient(rgba(176, 125, 255, 0.15) 1.5px, transparent 1.5px);
+    background-size: 24px 24px;
+    padding: 2rem;
+    text-align: center;
+    justify-content: space-between;
+}
+
+nav a{
+    color: #eee;
+    text-decoration: none;
+}
+
+nav .nav_buttons{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.nav_buttons a:hover{
+    color: #8a2be2;
+}
+
+.logo_text{
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    nav{
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    .nav_buttons{
+        align-items: center;
+        justify-content: center;
+    }
+}
